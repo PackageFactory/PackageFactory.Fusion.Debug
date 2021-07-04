@@ -2,6 +2,11 @@
 
 > Provides simple methods to debug stuff in Fusion
 
+This package allows you to debug values in fusion as simple as:
+
+```fusion
+debug = ${Debug.var_dump(node).var_dump(request).die()}
+```
 
 ## ⚠⚠⚠ Still under development ⚠⚠⚠
 
@@ -106,6 +111,24 @@ fusionPath = ${Debug.var_dump(Debug.fusionPath(this))}
 `Debug.fusionPath(...)` accepts the following parameters:
 
 * **$fusionObject : AbstractFusionObject** - The fusion object to get the fusion path from (when in doubt, use `this`)
+
+## Interrupting program execution
+
+### exit
+
+You can use `Debug.exit()` to stop execution of the PHP Script entirely (just as with the `exit` function of the PHP standard library).
+
+`Debug.exit()` takes no parameters.
+
+`Debug.exit()` can be used in any chain of `Debug.var_dump(...)`, `Debug.print_r(...)`, `Debug.var_export(...)` or `Debug.xdebug_var_dump(...)` calls:
+
+```fusion
+debug = ${Debug.var_dump(node).var_dump(request).die()}
+```
+
+### die
+
+`Debug.die()` is an alias for `Debug.exit()`.
 
 ## Contribution
 

@@ -89,6 +89,22 @@ final class Debug implements ProtectedContextAwareInterface
     }
 
     /**
+     * @return void
+     */
+    public function exit(): void
+    {
+        exit($this->buffer);
+    }
+
+    /**
+     * @return void
+     */
+    public function die(): void
+    {
+        die($this->buffer);
+    }
+
+    /**
      * @return string
      */
     public function __toString(): string
