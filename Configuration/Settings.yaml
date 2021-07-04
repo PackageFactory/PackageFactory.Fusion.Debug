@@ -1,0 +1,4 @@
+Neos:
+  Fusion:
+    defaultContext:
+      Debug: PackageFactory\Fusion\Debug\Debug
