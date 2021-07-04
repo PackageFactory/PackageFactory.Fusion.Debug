@@ -75,6 +75,20 @@ final class Debug implements ProtectedContextAwareInterface
     }
 
     /**
+     * @param AbstractFusionObject $fusionObject
+     * @return string
+     */
+    public function fusionPath(AbstractFusionObject $fusionObject): string
+    {
+        $reflectionObject = new ReflectionObject($fusionObject);
+        $pathReflectionProperty = $reflectionObject->getProperty('path');
+
+        $pathReflectionProperty->setAccessible(true);
+
+        return $pathReflectionProperty->getValue($fusionObject);
+    }
+
+    /**
      * @return string
      */
     public function __toString(): string

@@ -93,6 +93,20 @@ To show multiple debug outputs in a row, `Debug.xdebug_var_dump(...)` calls can 
 xdebug_var_dump = ${Debug.xdebug_var_dump(myValue).xdebug_var_dump(myOtherValue)}
 ```
 
+## Debug Fusion Objects
+
+### fusionPath
+
+You can use `Debug.fusionPath(...)` to get the current fusion path of a particular fusion object (most commonly it will be `this`).
+
+```fusion
+fusionPath = ${Debug.var_dump(Debug.fusionPath(this))}
+```
+
+`Debug.fusionPath(...)` accepts the following parameters:
+
+* **$fusionObject : AbstractFusionObject** - The fusion object to get the fusion path from (when in doubt, use `this`)
+
 ## Contribution
 
 We will gladly accept contributions. Please send us pull requests.
