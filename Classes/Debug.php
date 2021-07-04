@@ -56,6 +56,25 @@ final class Debug implements ProtectedContextAwareInterface
     }
 
     /**
+     * @param mixed $value
+     * @param boolean $pre
+     * @return Debug
+     */
+    public function xdebug_var_dump($value, bool $pre = true): Debug
+    {
+        ob_start();
+        if (function_exists('\\xdebug_var_dump')) {
+            \xdebug_var_dump($value);
+        } else {
+            \var_dump($value);
+        }
+        $output = ob_get_clean();
+
+        $this->buffer .= ($pre ? '<pre>' : '') . $output . ($pre ? '</pre>' : '');
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function __toString(): string

@@ -74,6 +74,25 @@ To show multiple debug outputs in a row, `Debug.var_export(...)` calls can be ch
 var_export = ${Debug.var_export(myValue).var_export(myOtherValue)}
 ```
 
+### xdebug_var_dump
+
+`Debug.xdebug_var_dump(...)` is a small wrapper around the `xdebug_var_dump` function of the XDebug PHP extension. If that extension is not enabled, `Debug.xdebug_var_dump(...)` will fall back to the `var_dump` function of the PHP standard library.
+
+```fusion
+xdebug_var_dump = ${Debug.xdebug_var_dump(myValue)}
+```
+
+However, the signature of `Debug.xdebug_var_dump(...)` deviates a little and accepts the following parameters:
+
+* **$value : mixed** - The value to debug
+* **$pre : boolean (optional, default = true)** - If true, the output will be wrapped in a `<pre>`-Tag
+
+To show multiple debug outputs in a row, `Debug.xdebug_var_dump(...)` calls can be chained arbitrarily:
+
+```fusion
+xdebug_var_dump = ${Debug.xdebug_var_dump(myValue).xdebug_var_dump(myOtherValue)}
+```
+
 ## Contribution
 
 We will gladly accept contributions. Please send us pull requests.
