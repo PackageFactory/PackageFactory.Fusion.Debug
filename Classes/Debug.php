@@ -34,6 +34,17 @@ final class Debug implements ProtectedContextAwareInterface
     }
 
     /**
+     * @param mixed $value
+     * @param boolean $pre
+     * @return Debug
+     */
+    public function print_r($value, bool $pre = true): Debug
+    {
+        $this->buffer .= ($pre ? '<pre>' : '') . print_r($value, true) . ($pre ? '</pre>' : '');
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function __toString(): string

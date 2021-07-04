@@ -30,10 +30,29 @@ var_dump = ${Debug.var_dump(myValue)}
 * **$plaintext : boolean (optional, default = false)** - If true, the output won't be HTML but plain text
 * **$pre : boolean (optional, default = true)** - If true and $plaintext is true as well, the output will be wrapped in a `<pre>`-Tag
 
-To show multiple debug outputs in a row, `Debug.var_dump(...)` calls can be arbitrarily chained:
+To show multiple debug outputs in a row, `Debug.var_dump(...)` calls can be chained arbitrarily:
 
 ```fusion
 var_dump = ${Debug.var_dump(myValue).var_dump(myOtherValue)}
+```
+
+### print_r
+
+`Debug.print_r(...)` is a small wrapper around the `print_r` function of the PHP standard library.
+
+```fusion
+print_r = ${Debug.print_r(myValue)}
+```
+
+However, the signature of `Debug.print_r(...)` deviates a little and accepts the following parameters:
+
+* **$value : mixed** - The value to debug
+* **$pre : boolean (optional, default = true)** - If true, the output will be wrapped in a `<pre>`-Tag
+
+To show multiple debug outputs in a row, `Debug.print_r(...)` calls can be chained arbitrarily:
+
+```fusion
+print_r = ${Debug.print_r(myValue).print_r(myOtherValue)}
 ```
 
 ## Contribution
