@@ -45,6 +45,17 @@ final class Debug implements ProtectedContextAwareInterface
     }
 
     /**
+     * @param mixed $value
+     * @param boolean $pre
+     * @return Debug
+     */
+    public function var_export($value, bool $pre = true): Debug
+    {
+        $this->buffer .= ($pre ? '<pre>' : '') . var_export($value, true) . ($pre ? '</pre>' : '');
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function __toString(): string

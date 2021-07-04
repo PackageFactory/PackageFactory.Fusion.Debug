@@ -55,6 +55,25 @@ To show multiple debug outputs in a row, `Debug.print_r(...)` calls can be chain
 print_r = ${Debug.print_r(myValue).print_r(myOtherValue)}
 ```
 
+### var_export
+
+`Debug.var_export(...)` is a small wrapper around the `var_export` function of the PHP standard library.
+
+```fusion
+var_export = ${Debug.var_export(myValue)}
+```
+
+However, the signature of `Debug.var_export(...)` deviates a little and accepts the following parameters:
+
+* **$value : mixed** - The value to debug
+* **$pre : boolean (optional, default = true)** - If true, the output will be wrapped in a `<pre>`-Tag
+
+To show multiple debug outputs in a row, `Debug.var_export(...)` calls can be chained arbitrarily:
+
+```fusion
+var_export = ${Debug.var_export(myValue).var_export(myOtherValue)}
+```
+
 ## Contribution
 
 We will gladly accept contributions. Please send us pull requests.
