@@ -1,0 +1,2 @@
+includes:
+	- Packages/Libraries/jangregor/phpstan-prophecy/extension.neon

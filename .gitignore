@@ -1,0 +1,9 @@
+bin/
+Build/
+Packages/
+Web/
+Data/
+vendor/
+composer.lock
+.phpunit.result.cache
+.idea

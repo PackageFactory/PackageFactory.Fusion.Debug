@@ -1,0 +1,55 @@
+{
+    "name": "packagefactory/fusion-debug",
+    "type": "neos-package",
+    "description": "Provides simple methods to debug stuff in Fusion",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wilhelm Behncke",
+            "email": "wilhelm.behncke@googlemail.com",
+            "role": "Developer"
+        }
+    ],
+    "scripts": {
+        "cleanup": [
+            "rm -f composer.lock",
+            "rm -rf Packages",
+            "rm -rf Build",
+            "rm -rf bin"
+        ],
+        "lint": "phpcs --standard=PSR2 --extensions=php --exclude=Generic.Files.LineLength Classes/ Tests/",
+        "analyse": "phpstan analyse --level 8 Tests/Unit Classes",
+        "test": "phpunit -c phpunit.xml --enforce-time-limit --coverage-html Build/Reports/coverage Tests"
+    },
+    "require": {
+        "neos/neos": "^5.0 || ^7.0 || dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4",
+        "phpstan/phpstan": "^0.12.82",
+        "neos/buildessentials": "^6.3",
+        "mikey179/vfsstream": "^1.6",
+        "squizlabs/php_codesniffer": "^3.5",
+        "jangregor/phpstan-prophecy": "^0.8.0",
+        "spatie/phpunit-snapshot-assertions": "^4.2"
+    },
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "PackageFactory\\Fusion\\Debug\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PackageFactory\\Fusion\\Debug\\Tests\\": "Tests"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "PackageFactory.Fusion.Debug"
+        }
+    }
+}
