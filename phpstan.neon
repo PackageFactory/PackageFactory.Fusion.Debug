@@ -1,2 +1,6 @@
 includes:
 	- Packages/Libraries/jangregor/phpstan-prophecy/extension.neon
+parameters:
+	bootstrapFiles:
+		- phpstan.bootstrap.php
+		- Packages/Framework/Neos.Flow/Classes/Error/Debugger.php

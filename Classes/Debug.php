@@ -29,7 +29,9 @@ final class Debug implements ProtectedContextAwareInterface
      */
     public function var_dump($variable, string $title = null, bool $plaintext = false, bool $pre = true): Debug
     {
-        $this->buffer .= ($plaintext && $pre ? '<pre>' : '') . \Neos\Flow\var_dump($variable, $title, true, $plaintext) . ($plaintext && $pre ? '</pre>' : '');
+        /** @var string $output */
+        $output = \Neos\Flow\var_dump($variable, $title, true, $plaintext) ?? '';
+        $this->buffer .= ($plaintext && $pre ? '<pre>' : '') . $output . ($plaintext && $pre ? '</pre>' : '');
         return $this;
     }
 
