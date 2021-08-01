@@ -8,10 +8,6 @@ This package allows you to debug values in fusion as simple as:
 debug = ${Debug.var_dump(node).var_dump(request).die()}
 ```
 
-## ⚠⚠⚠ Still under development ⚠⚠⚠
-
-This package is still under development. This message will disappear once the package is ready for testing.
-
 ## Installation
 
 ```
