@@ -26,6 +26,7 @@ final class Debug implements ProtectedContextAwareInterface
      * @param boolean $plaintext
      * @param boolean $pre
      * @return Debug
+     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
     public function var_dump($variable, string $title = null, bool $plaintext = false, bool $pre = true): Debug
     {
@@ -39,6 +40,7 @@ final class Debug implements ProtectedContextAwareInterface
      * @param mixed $value
      * @param boolean $pre
      * @return Debug
+     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
     public function print_r($value, bool $pre = true): Debug
     {
@@ -50,6 +52,7 @@ final class Debug implements ProtectedContextAwareInterface
      * @param mixed $value
      * @param boolean $pre
      * @return Debug
+     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
     public function var_export($value, bool $pre = true): Debug
     {
@@ -61,6 +64,7 @@ final class Debug implements ProtectedContextAwareInterface
      * @param mixed $value
      * @param boolean $pre
      * @return Debug
+     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
     public function xdebug_var_dump($value, bool $pre = true): Debug
     {
