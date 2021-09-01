@@ -22,7 +22,7 @@
         "test": "phpunit -c phpunit.xml --enforce-time-limit --coverage-html Build/Reports/coverage Tests || true"
     },
     "require": {
-        "neos/neos": "^5.0 || ^7.0 || dev-master"
+        "neos/fusion": "^5.0 || ^7.0 || dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.4",
