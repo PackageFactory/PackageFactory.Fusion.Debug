@@ -11,6 +11,7 @@ use Neos\Fusion\FusionObjects\AbstractFusionObject;
 use ReflectionObject;
 
 /**
+ * @IgnoreAnnotation("phpcs:disable")
  * @Flow\Scope("singleton")
  */
 final class Debug implements ProtectedContextAwareInterface
