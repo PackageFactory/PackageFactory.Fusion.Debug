@@ -1,3 +1,7 @@
+> [!NOTE]
+> This repository is archived, but the project is not. Development continues over here:
+> https://codeberg.org/PackageFactory/fusion-debug
+
 # PackageFactory.Fusion.Debug
 
 > Provides simple methods to debug stuff in Fusion
